@@ -14,4 +14,4 @@ To deploy Dirigible with Postgres as database using docker-compose, follow these
 - Modify the environment file (.env) to configure the database access.
 - Modify the dirigible/tomcat_users.xml to configure users and passwords.
 - Run docker-compose up
-- Access https://localhost:8080
+- Access http://localhost:8080

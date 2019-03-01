@@ -1,0 +1,13 @@
+terragrunt = {
+    dependencies {
+    paths = ["../gke"]
+  }
+  terraform {
+    source = "git::https://github.com/dcna-io/dirigible-gke//postgresql"
+  }
+  include = {
+    path = "${find_in_parent_folders()}"
+  }
+}
+
+postgres_storage = "1Gi"

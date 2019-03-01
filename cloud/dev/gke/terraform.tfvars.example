@@ -1,0 +1,14 @@
+terragrunt = {
+  terraform {
+    source = "git::https://github.com/dcna-io/dirigible-gke//gke"
+  }
+  include = {
+    path = "${find_in_parent_folders()}"
+  }
+}
+
+project_id = ""
+region = ""
+zone = ""
+cluster_name = ""
+initial_node_count = 2

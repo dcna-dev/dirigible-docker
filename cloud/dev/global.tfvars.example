@@ -1,0 +1,10 @@
+username = ""
+password = ""
+DB       = ""
+DB_PASSWORD = ""
+DB_USER = ""
+
+bucket  = ""
+prefix    = ""
+project = ""
+

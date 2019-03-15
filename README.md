@@ -9,11 +9,12 @@ This configuration follows the official documentation to deploy with Tomcat (htt
 
 To deploy Dirigible with Postgres as database using docker-compose, follow these instructions:
 
-- Clone this repo:
-- git clone https://github.com/dcna-io/dirigible-docker.git
+- Clone this repo: git clone https://github.com/dcna-io/dirigible-docker.git
+- Switch to docker branch: git checkout docker
 - Modify the environment file (.env) to configure the database access.
 - Modify the dirigible/tomcat_users.xml to configure users and passwords.
 - Run docker-compose up
+
 - Access https://localhost:8080
 
 # To deploy the Eclipse Dirigible in Google Kubernetes Engine

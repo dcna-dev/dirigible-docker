@@ -9,26 +9,28 @@ This configuration follows the official documentation to deploy with Tomcat (htt
 
 To deploy Dirigible with Postgres as database using docker-compose, follow these instructions:
 
-- Clone this repo: git clone https://github.com/dcna-io/dirigible-docker.git
-- Switch to docker branch: git checkout docker
-- Modify the environment file (.env) to configure the database access.
-- Modify the dirigible/tomcat_users.xml to configure users and passwords.
-- Run docker-compose up
+1. Clone this repo: 
+``` git clone https://github.com/dcna-io/dirigible-docker.git ```
+2. Modify the environment file (.env) to configure the database access.
+3. Modify the dirigible/tomcat_users.xml to configure users and passwords.
+4. Run ``` docker-compose up ```
 
-- Access https://localhost:8080
+5 Access https://localhost:8080
 
 # To deploy the Eclipse Dirigible in Google Kubernetes Engine
 
-- Clone this repo:
-- git clone https://github.com/dcna-io/dirigible-docker.git
-- Export an env variable with the path to your GCP credentials:
-- export GOOGLE_APPLICATION_CREDENTIALS=/path/to/your/credentials.json
-- Export an env variable with GCP project ID:
-- export PROJECT_ID="$(gcloud config get-value project -q)"
-- Build the docker image:
-- docker build -t gcr.io/${PROJECT_ID}/dirigible ./dirigible
-- Push the created image to GCP registry:
-- docker push gcr.io/${PROJECT_ID}/dirigible
-- Go to cloud/dev/ and edit the variables in all .tfvars files
-- Execute terragrunt apply-all
-- Access the Dirigible app using the IP address shown  at the end of execution
+1. Clone this repo:
+``` git clone https://github.com/dcna-io/dirigible-docker.git ```
+2. Export an env variable with the path to your GCP credentials:
+``` export GOOGLE_APPLICATION_CREDENTIALS=/path/to/your/credentials.json ```
+3. Export an env variable with GCP project ID:
+``` export PROJECT_ID="$(gcloud config get-value project -q)" ```
+4. Build the docker image:
+``` docker build -t gcr.io/${PROJECT_ID}/dirigible ./dirigible ```
+5. Configure docker to log in Google Cloud Registry
+``` cat $GOOGLE_APPLICATION_CREDENTIALS | docker login -u \_json_key --password-stdin https://gcr.io ```
+6. Push the created image to GCP registry:
+``` docker push gcr.io/${PROJECT_ID}/dirigible ```
+7. Go to cloud/dev/ and edit the variables in all .tfvars files
+8. Execute terragrunt apply-all
+9. Access the Dirigible app using the IP address shown  at the end of execution

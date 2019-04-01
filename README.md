@@ -32,5 +32,5 @@ To deploy Dirigible with Postgres as database using docker-compose, follow these
 6. Push the created image to GCP registry:
 ``` docker push gcr.io/${PROJECT_ID}/dirigible ```
 7. Go to cloud/dev/ and edit the variables in all .tfvars files
-8. Execute terragrunt apply-all
+8. Execute ``` terragrunt apply-all ```
 9. Access the Dirigible app using the IP address shown  at the end of execution
